@@ -1,0 +1,61 @@
+{% extends 'base_foot.html' %}
+
+{% block head %}
+
+
+{% endblock head %}
+
+{% block body %}
+        <div class="register_con">
+			<div class="l_con fl">
+				<div class='reg_logo'></div>
+				<div class="reg_slogan">足不出户  ·  新鲜每一天</div>
+				<div class="reg_banner"></div>
+			</div>
+			<div class="r_con fr">
+				<div class="reg_title clearfix" >
+					<h1>用户注册</h1>
+					<a href="{% url 'df_user:login' %}">登录</a>
+				</div>
+				<div class="reg_form clearfix">
+					<form method="post" action="{% url 'df_user:register_handle' %}">
+                        {% csrf_token %}
+						<ul>
+							<li>
+								<label> 用户名：</label>
+                                <input type="text" id="username" name="username" title="username">
+								<span class="error_tip"> 提示信息 </span>
+							</li>
+							<li>
+								<label> 密码：</label>
+								<input type="password" id='password'  name="password" title="password">
+								<span class="error_tip">提示信息</span>
+							</li>
+							<li>
+								<label> 确认密码：</label>
+								<input type="password" id="confirm" name="confirm" title="confirm">
+								<span class="error_tip">提示信息</span>
+							</li>
+							<li>
+								<label> 邮件：</label>
+								<input type="text" id="email" name="email" title="email">
+								<span class="error_tip">提示信息</span>
+							</li>
+
+							<li class="agreement">
+								<input type="checkbox" name="allow" id="allow" title="allow">
+								<label> 同意<a href=''>《天天生鲜用户使用协议》</a></label>
+								<span class="error_tip2" >提示信息</span>
+							</li>
+							<li class='reg_sub'>
+								<button id='submit' type="submit"> 注册 </button>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+{% endblock body %}
+
+{% block foot %}
+{% endblock foot %}
