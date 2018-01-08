@@ -152,20 +152,21 @@
 .footer {
 	border-top:2px solid lawngreen;
 	text-align: center;
+	font-size: 13px;
 }
 
 .foot_link{
-	font-size: 13px;
+	list-style: none;
 	margin-top:20px;
 }
 
-.footer p {
+.footer p{
 	color: #9F9F9F;
 	margin-top: 10px;
-	font-size: 13px;
 }
 
 .login_form_bg {
+	position: relative;
 	background-color: #518e17;
 	width: auto;
 	height: 480px;
@@ -187,8 +188,10 @@
 }
 
 .glogan {
+	position: absolute;
+	left:700px;
     width:30px;
-    height:480px;
+    height:420px;
     font-size: 30px;
     margin-top: 50px;
     margin-left: 100px;
@@ -201,7 +204,8 @@
     margin-right: 40px;
     height:380px;
     width:320px;
-
+	left:900px;
+	position: absolute;
     background-color: white;
 }
 

@@ -6,7 +6,6 @@ from hashlib import sha1
 
 # Create your views here.
 def register(request):
-    print('arrived register...')
     return render(request, 'df_user/register.html')
 
 
@@ -47,3 +46,9 @@ def login(request):
     return render(request, 'df_user/login.html')
 
 
+def login_foot(request):
+    return render(request, 'base_foot.html')
+
+
+def find_password(request):
+    return HttpResponse("hello, boy , find your password ? no way!")
