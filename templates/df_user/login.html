@@ -1,5 +1,7 @@
 {% extends 'base_foot.html' %}
-
+{% block head %}
+   <script type="text/javascript" src="/static/js/login1.js"></script>
+{% endblock head %}
 {% block body %}
     <div class="login_top clearfix">
         <a href="{% url 'df_user:login' %}"> <img src="/static/images/logo02.png"> </a>
@@ -11,16 +13,24 @@
             <div class="login_title clearfix">
                 <h1> 用户登录 </h1> <a href={% url 'df_user:register' %}> 立即注册 </a>
             </div>
-            <form class="form_input" method="post">
-                <input class="name_input" placeholder="请输入用户名" style="cursor: auto;" type="text">
-                <input class="password_input" placeholder="请输入密码" type="password">
-                <div class="more_input">
-                    <input type="checkbox">
-                    <label> 记住用户名 </label>
-                    <a href="{% url 'df_user:find_password' %}"> 忘记密码? </a>
-                </div>
-                <input class="input_submit" type="submit" value="登录">
-
+            <form class="form_input" method="post" action="{% url 'df_user:login_handle' %}">
+                <ul>
+                    <li>
+                        <input class="name_input" name="username" id="username" placeholder="请输入用户名" style="cursor: auto;" type="text">
+                        <span class="error_tip"> 提示信息 </span>
+                    </li>
+                    <li>
+                        <input class="password_input" name="password" id="password" placeholder="请输入密码" type="password">
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label> 记住用户名 </label>
+                        <a href="{% url 'df_user:find_password' %}"> 忘记密码? </a>
+                    </li>
+                    <li>
+                         <input class="input_submit" type="submit" value="登录">
+                    </li>
+                </ul>
             </form>
         </div>
     </div>
