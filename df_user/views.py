@@ -46,8 +46,17 @@ def login(request):
     return render(request, 'df_user/login.html')
 
 
-def login_foot(request):
-    return render(request, 'base_foot.html')
+def login_handle(request):
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    return HttpResponse("hello, waiting to deal...")
+
+
+def user_exit(request):
+    name = request.GET.get('uname')
+    print('登录时候的用户名检查的是：%s' % name)
+    print(UserInfo.objects.filter(uname=name).exists())
+    return HttpResponse({'is_exist':UserInfo.objects.filter(uname=name).exists()})
 
 
 def find_password(request):
