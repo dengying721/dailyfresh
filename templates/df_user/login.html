@@ -13,7 +13,8 @@
             <div class="login_title clearfix">
                 <h1> 用户登录 </h1> <a href={% url 'df_user:register' %}> 立即注册 </a>
             </div>
-            <form class="form_input" method="post" action="{% url 'df_user:login_handle' %}">
+            <form class="login_input clearfix" method="post" action="{% url 'df_user:login_handle' %}">
+                {% csrf_token %}
                 <ul>
                     <li>
                         <input class="name_input" name="username" id="username" placeholder="请输入用户名" style="cursor: auto;" type="text">
@@ -21,14 +22,15 @@
                     </li>
                     <li>
                         <input class="password_input" name="password" id="password" placeholder="请输入密码" type="password">
+                        <span class="error_tip"> 密码提示信息 </span>
                     </li>
-                    <li>
+                    <li class="more_input">
                         <input type="checkbox">
                         <label> 记住用户名 </label>
                         <a href="{% url 'df_user:find_password' %}"> 忘记密码? </a>
                     </li>
                     <li>
-                         <input class="input_submit" type="submit" value="登录">
+                        <button class="input_submit" id="submit" type="submit" value="submit">登录</button>
                     </li>
                 </ul>
             </form>
