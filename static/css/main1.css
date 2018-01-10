@@ -271,7 +271,7 @@
     text-indent: 10px;
 }
 
-.login_input .error_tip{
+.login_input .error_tip,.error_tip2{
 	display: none;
 	color:red;
 	font-size: 11px;

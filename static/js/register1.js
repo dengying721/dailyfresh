@@ -9,7 +9,7 @@ $(function(){
 	var confirm = $('#confirm');
 	var email = $('#email');
 	var allow = $('#allow');
-	var form_submit = document.getElementById('register_form');
+	var form_submit = document.getElementById('submit');
 
 	username.blur(function(){
 		check_user_name();

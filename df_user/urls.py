@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^user/find_password$', find_password, name='find_password'),
     url(r'^user/login_handle$', login_handle, name='login_handle'),
     url(r'^user/user_exist', user_exit, name='user_exit'),
+    url(r'^user/index$', login_index, name='index'),
 ]

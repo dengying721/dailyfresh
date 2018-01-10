@@ -52,7 +52,23 @@ def login_handle(request):
     password = request.POST.get('password')
     print("name is : %s" % username)
     print("password is : %s" % password)
-    return HttpResponse("hello, waiting to deal...")
+
+    users = UserInfo.objects.filter(uname=username)
+    print(users)
+    if len(users) == 1:
+        s1 = sha1()
+        s1.update(password.encode('utf-8'))
+        s_pwd = s1.hexdigest()
+        upwd = users[0].upwd
+
+        if s_pwd == upwd:
+            return redirect('/user/index')
+        else:
+            context = {'title': '用户登录', 'error_name': 0, 'error_pwd': 1, 'uname': username, 'upwd': password}
+            return render(request, 'df_user/login.html', context)
+    else:
+        context = {'title': '用户登录', 'error_name': 0, 'error_pwd': 1, 'uname': username, 'upwd': password}
+        return render(request, 'df_user/login.html', context)
 
 
 #登录时判断用户名是否存在
@@ -65,3 +81,7 @@ def user_exit(request):
 
 def find_password(request):
     return HttpResponse("hello, boy , find your password ? no way!")
+
+
+def login_index(request):
+    return HttpResponse("hello , index!")

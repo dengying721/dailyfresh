@@ -4,15 +4,22 @@ $(function () {
     var username = $('#username');
     var password = $('#password');
     var submitBtn = document.getElementById('submit');
+    var name_error = false;
+    var password_error = false;
+    //
+    // if({{name_error}} == 1) {
+    //     $(".error_tip").html("用户名错误").show();
+    // }
+    // if({{password_error}} == 1) {
+    //     $('.error_tip2').html("密码错误").show();
+    // }
 
     window.onload = function () {
         submitBtn.onclick = function (ev) {
-            alert("the loginCheck result is:"+ login_check());
             if(login_check()) {
                 ev.preventDefault();
             }
             else {
-                alert("congratulations!");
             }
         }
     };
@@ -63,12 +70,10 @@ $(function () {
     }
 
     function login_check() {
-        alert('hello');
         check_username();
         check_password();
-        alert(error_username);
-        alert(error_password);
         return ((error_username === true || error_password === true));
     }
+
 
 });
