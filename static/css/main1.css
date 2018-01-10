@@ -238,53 +238,68 @@
     color: #5fb42a;
 }
 
-.form_input {
+.login_input {
     width: 300px;
-    height:100px;
+    height:250px;
 }
 
-.form_input .name_input {
-    margin-top:20px;
-    margin-left: 20px;
+.login_input ul{
+	list-style: none;
+}
+
+.login_input li{
+	position: relative;
+    width: 300px;
     height:40px;
-    width:280px;
+	margin:25px;
+}
+.login_input .name_input {
+	float:left;
+    height:40px;
+	width: 270px;
     border: 2px solid #e0e0e0;
     background:#f8f8f8;
     text-indent: 10px;
 }
 
-.form_input .password_input {
-    margin-top:20px;
-    margin-left: 20px;
+.login_input .password_input {
+	float:left;
     height:40px;
-    width:280px;
+	width:270px;
     background: #f8f8f8;
     border: 1px solid #e0e0e0;
     text-indent: 10px;
 }
 
-.form_input .more_input {
-    margin-top:40px;
+.login_input .error_tip{
+	display: none;
+	color:red;
+	font-size: 11px;
+	float:left;
+	margin:3px;
+}
+
+.login_input .more_input {
+    margin-top:30px;
     margin-left: 22px;
     font-size: 12px;
 }
 
-.form_input .more_input label{
-    margin-top:40px;
+.login_input .more_input label{
+    margin-top:10px;
     margin-left: 5px;
     font-size: 12px;
 }
 
-.form_input .more_input a {
+.login_input .more_input a {
     float: right;
-    margin-right: 10px;
+    margin-right: 50px;
 }
 
-.form_input .input_submit {
-    margin-top: 20px;
-    margin-left: 20px;
+.login_input .input_submit {
+	margin-top: -20px;
     height:50px;
-    width:280px;
+    width:270px;
     font-size: 20px;
     color:white;
     background: #5fb42a;
