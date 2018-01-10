@@ -9,8 +9,8 @@ $(function(){
 	var confirm = $('#confirm');
 	var email = $('#email');
 	var allow = $('#allow');
+	var form_submit = document.getElementById('register_form');
 
-	
 	username.blur(function(){
 		check_user_name();
 	});
@@ -26,22 +26,8 @@ $(function(){
 	email.blur(function(){
 		check_email()
 	});
-//----------------------	
-//	$('#allow').click(function() {
-//		if($(this).is(':checked'))
-//		{
-//			error_check = false;
-//			$(this).siblings('span').hide();
-//		}
-//		else
-//		{
-//			error_check = true;
-//			$(this).siblings('span').html('请勾选同意');
-//			$(this).siblings('span').show();
-//		}
-//	});
-//-------------------	
-		allow.click(function() {
+
+	allow.click(function() {
 		if($(this).is(':checked'))
 		{
 			error_check = false;
@@ -115,14 +101,21 @@ $(function(){
 		}
 	}
 
-	$('#reg_form').submit(function(){
+	function register_check() {
 		check_user_name();
 		check_password();
 		check_password_confirm();
 		check_email();
-
-
 		return(!(error_name === false && error_password === false && error_confirm === false && error_email === false && error_check === false));
-	});
-}
-);
+	}
+
+	window.onload = function() {
+		form_submit.onclick = function (ev) {
+			if(register_check()){
+			ev.preventDefault();
+			}
+			else{
+			}
+		}
+	}
+});
