@@ -62,7 +62,7 @@ def login_handle(request):
         upwd = users[0].upwd
 
         if s_pwd == upwd:
-            return redirect('/user/index')
+            return redirect('/user/info')
         else:
             context = {'title': '用户登录', 'error_name': 0, 'error_pwd': 1, 'uname': username, 'upwd': password}
             return render(request, 'df_user/login.html', context)
@@ -85,3 +85,7 @@ def find_password(request):
 
 def login_index(request):
     return HttpResponse("hello , index!")
+
+
+def user_info(request):
+    return HttpResponse('welcome userinfo page.')
