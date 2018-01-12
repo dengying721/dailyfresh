@@ -1,4 +1,4 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, HttpResponse
 from .models import *
 from hashlib import sha1
@@ -43,13 +43,16 @@ def register_exist(request):
 
 
 def login(request):
-    return render(request, 'df_user/login.html')
+    uname = request.COOKIES.get('uname', '')
+    context = {'title': '用户登录', 'error_name':0, "error_pwd": 0, 'uname': uname}
+    return render(request, 'df_user/login.html', context)
 
 
 # 登录请求处理
 def login_handle(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
+    is_remember = request.POST.get('jizhu')
     print("name is : %s" % username)
     print("password is : %s" % password)
 
@@ -62,12 +65,20 @@ def login_handle(request):
         upwd = users[0].upwd
 
         if s_pwd == upwd:
-            return redirect('/user/info')
+            red = HttpResponseRedirect('/user/info')
+            if is_remember != 0:
+                print('---------------------the remember is 1.')
+                red.set_cookie('uname', username)
+            else:
+                print('----------------------the remember is 0.')
+                red.set_cookie('uname', '', max_age=-1)
+            return red
         else:
-            context = {'title': '用户登录', 'error_name': 0, 'error_pwd': 1, 'uname': username, 'upwd': password}
+            context = {'title': '用户登录1', 'error_name': 0, 'error_pwd': 1, 'uname': username, 'upwd': password}
+            print("enter else ...")
             return render(request, 'df_user/login.html', context)
     else:
-        context = {'title': '用户登录', 'error_name': 0, 'error_pwd': 1, 'uname': username, 'upwd': password}
+        context = {'title': '用户登录2', 'error_name': 1, 'error_pwd': 0, 'uname': username, 'upwd': password}
         return render(request, 'df_user/login.html', context)
 
 
@@ -88,4 +99,4 @@ def login_index(request):
 
 
 def user_info(request):
-    return HttpResponse('welcome userinfo page.')
+    return render(request, 'df_user/user_center_info.html')

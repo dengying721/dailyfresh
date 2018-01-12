@@ -3,16 +3,10 @@ $(function () {
     var error_password = false;
     var username = $('#username');
     var password = $('#password');
-    var submitBtn = document.getElementById('submit');
-    var name_error = false;
-    var password_error = false;
-    //
-    // if({{name_error}} == 1) {
-    //     $(".error_tip").html("用户名错误").show();
-    // }
-    // if({{password_error}} == 1) {
-    //     $('.error_tip2').html("密码错误").show();
-    // }
+    var remember = $('#remember');
+    // var remember = document.getElementById('remember');
+    var submitBtn = $('#submit');
+    // var submitBtn = document.getElementById('submit');
 
     window.onload = function () {
         submitBtn.onclick = function (ev) {
@@ -32,6 +26,11 @@ $(function () {
         check_password();
     });
 
+    // checkbox的check状态更改，需要使用change()来捕捉，onclick、click、onchange都不行。
+     .change(function () {
+        alert("调用change");
+        login_remember();
+    })
     function check_username() {
         var uname = username.val();
         var len = uname.length;
@@ -69,11 +68,18 @@ $(function () {
         }
     }
 
+    function login_remember() {
+        if(remember.checked){
+            remember.value = 1;
+        }else {
+            remember.value = 0;
+        }
+        alert(document.getElementById('remember'));
+    }
+
     function login_check() {
         check_username();
         check_password();
         return ((error_username === true || error_password === true));
     }
-
-
 });

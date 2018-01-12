@@ -1,6 +1,17 @@
 {% extends 'base_foot.html' %}
 {% block head %}
-   <script type="text/javascript" src="/static/js/login1.js"></script>
+    <script type="text/javascript" src="/static/js/login1.js">
+    </script>
+    <script>
+        $(function () {
+             if({{error_name}} === 1){
+                $(".error_name_tip").html("* 用户信息异常，请联系管理员").show(300);
+            }
+            if({{error_pwd}} === 1) {
+                $('.error_password_tip').html("* 密码错误").show(300);
+            }
+        });
+    </script>
 {% endblock head %}
 {% block body %}
     <div class="login_top clearfix">
@@ -17,15 +28,15 @@
                 {% csrf_token %}
                 <ul>
                     <li>
-                        <input class="name_input" name="username" id="username" placeholder="请输入用户名" style="cursor: auto;" type="text">
-                        <span class="error_tip"> 提示信息 </span>
+                        <input class="name_input" name="username" id="username" value="{{ uname }}" placeholder="请输入用户名" style="cursor: auto;" type="text">
+                        <span class="error_name_tip"> 提示信息 </span>
                     </li>
                     <li>
-                        <input class="password_input" name="password" id="password" placeholder="请输入密码" type="password">
-                        <span class="error_tip2"> 密码提示信息 </span>
+                        <input class="password_input" name="password" id="password" value="{{ upwd }}" placeholder="请输入密码" type="password">
+                        <span class="error_password_tip"> 密码提示信息 </span>
                     </li>
                     <li class="more_input">
-                        <input type="checkbox">
+                        <input type="checkbox" name="remember" id="remember" checked="checked">
                         <label> 记住用户名 </label>
                         <a href="{% url 'df_user:find_password' %}"> 忘记密码? </a>
                     </li>
@@ -37,7 +48,5 @@
         </div>
     </div>
 {% endblock body %}
-
-
 
 
