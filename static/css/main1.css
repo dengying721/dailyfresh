@@ -304,3 +304,27 @@
     color:white;
     background: #5fb42a;
 }
+
+.header_con {
+	width:1200px;
+	height:30px;
+	font-size: 15px;
+	color:darkgray;
+	margin:2px auto;
+}
+
+.header_con .welcome {
+	line-height: 30px;
+}
+
+.header_con .tips{
+	list-style: none;
+	line-height: 30px;
+}
+.header_con .tips a{
+	padding:0 10px;
+	color: darkgray;
+}
+.header_con .tips a:hover{
+	color: lightcoral;
+}

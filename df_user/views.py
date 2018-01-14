@@ -67,16 +67,16 @@ def login_handle(request):
         if s_pwd == upwd:
             red = HttpResponseRedirect('/user/info')
             if is_remember != 0:
-                print('---------------------the remember is 1.')
                 red.set_cookie('uname', username)
             else:
-                print('----------------------the remember is 0.')
                 red.set_cookie('uname', '', max_age=-1)
+            request.session['user_id'] = users[0].id
+            request.session['user_name'] = username
             return red
         else:
             context = {'title': '用户登录1', 'error_name': 0, 'error_pwd': 1, 'uname': username, 'upwd': password}
             print("enter else ...")
-            return render(request, 'df_user/login.html', context)
+            return render(request, 'df_user/login.html',context)
     else:
         context = {'title': '用户登录2', 'error_name': 1, 'error_pwd': 0, 'uname': username, 'upwd': password}
         return render(request, 'df_user/login.html', context)
@@ -99,4 +99,7 @@ def login_index(request):
 
 
 def user_info(request):
-    return render(request, 'df_user/user_center_info.html')
+    user_name = request.session.get('user_name')
+    user_id = request.session.get('user_id')
+    context = {'title': '用户中心', 'user_name': user_name, 'user_id': user_id}
+    return render(request, 'df_user/user_info1.html', context)
