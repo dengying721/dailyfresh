@@ -278,24 +278,20 @@
 	float:left;
 	margin:3px;
 }
-
 .login_input .more_input {
     margin-top:30px;
     margin-left: 22px;
     font-size: 12px;
 }
-
 .login_input .more_input label{
     margin-top:10px;
     margin-left: 5px;
     font-size: 12px;
 }
-
 .login_input .more_input a {
     float: right;
     margin-right: 50px;
 }
-
 .login_input .input_submit {
 	margin-top: -20px;
     height:50px;
@@ -304,27 +300,69 @@
     color:white;
     background: #5fb42a;
 }
-
 .header_con {
-	width:1200px;
+	width:auto;
 	height:30px;
-	font-size: 15px;
-	color:darkgray;
+	font-size: 14px;
+	color:#666;
 	margin:2px auto;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #dddddd;
 }
-
 .header_con .welcome {
 	line-height: 30px;
+	margin-left: 8%;
 }
-
 .header_con .tips{
 	list-style: none;
 	line-height: 30px;
+	margin-right: 8%;
 }
 .header_con .tips a{
 	padding:0 10px;
-	color: darkgray;
+	color: #666;
 }
 .header_con .tips a:hover{
 	color: lightcoral;
+}
+.seach_bar {
+	width: 1200px;
+	height: 150px;
+}
+.seach_bar .logo_png{
+	float: left;
+	/*position: relative;*/
+	width:150px;
+	height:60px;
+	margin: 30px 0 0  100px;
+}
+.user_center_logo {
+	font-size: 18px;
+	color: #666;
+	float: left;
+	margin-top: 50px;
+}
+.user_center_logo span{
+	margin:0 30px;
+}
+.search_field {
+	margin-top: 42px;
+	float: right;
+	height: 40px;
+
+}
+.search_field .input_box{
+	width: 400px;
+	padding-left: 36px;
+	line-height: 40px;
+	border: 1px solid #37ab40;;
+	background: url("/static/images/icons.png") 10px -338px no-repeat;
+}
+.search_field .input_btn{
+	width:100px;
+	font-size: 14px;
+	height: 42px;
+	color: white;
+	background-color: #37ab40;
+	border: 1px solid #37ab40;
 }
