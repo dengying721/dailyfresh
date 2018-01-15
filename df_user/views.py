@@ -103,3 +103,11 @@ def user_info(request):
     user_id = request.session.get('user_id')
     context = {'title': '用户中心', 'user_name': user_name, 'user_id': user_id}
     return render(request, 'df_user/user_info1.html', context)
+
+
+def user_site(request):
+    pass
+
+
+def user_order(request):
+    pass
