@@ -401,6 +401,9 @@
 .main_con .left_menu ul li a:hover {
 	color: lightcoral;
 }
+.main_con .left_menu ul .active {
+	color: orangered;
+}
 .main_con .right_content {
 	width: 960px;
 	height: 500px;
@@ -448,22 +451,39 @@
 	height: 280px;
 }
 .main_con .right_content .recent_view_goods ul li{
-	display: inline-block;
+	/*display: inline-block;*/
 	width: 188px;
 	height: 240px;
+	float: left;
 }
 .main_con .right_content .recent_view_goods ul li a{
 	height: 160px;
+	color: #666;
+}
+.main_con .right_content .recent_view_goods ul li a:hover{
+	color: lightcoral;
 }
 .main_con .right_content .recent_view_goods ul li img{
 	width: 160px;
 	height: 160px;
 }
 .main_con .right_content .recent_view_goods ul li h4,.goods_operation{
-	position: relative;
-	margin-top: 4px;
+	/*position: relative;*/
+	width: 160px;
+	margin: 8px 0;
 	font-size: 12px;
-	color:#666;
+	color: #666;
+	text-align: center;
+}
+.price {
+	color: red;
+}
+.main_con .right_content .recent_view_goods ul li .goods_operation .add_goods {
+	background: url("/static/images/shop_cart.png") no-repeat;
+	width: 15px;
+	height: 15px;
+	float: right;
+	margin-right: 15px;
 }
 body {
 	width: 100%;
