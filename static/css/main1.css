@@ -401,8 +401,9 @@
 .main_con .left_menu ul li a:hover {
 	color: lightcoral;
 }
-.main_con .left_menu ul .active {
+.main_con .left_menu ul li .active {
 	color: orangered;
+	font-weight: bold;
 }
 .main_con .right_content {
 	width: 960px;

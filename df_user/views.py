@@ -106,8 +106,8 @@ def user_info(request):
 
 
 def user_site(request):
-    pass
+    return render(request, "df_user/user_center_site.html")
 
 
 def user_order(request):
-    pass
+    return render(request, 'df_user/user_center_order.html')

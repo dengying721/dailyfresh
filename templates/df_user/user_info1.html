@@ -1,38 +1,6 @@
-{% extends 'base_foot.html' %}
-{% block body %}
-    <div class="header_con">
-        <div class="welcome fl">欢迎来到天天生鲜！</div>
-        <div class="tips fr"> 欢迎：{{ user_name }}
-            <span> | </span>
-            <a href="login.html">登录</a>
-             <span> | </span>
-            <a href="#">注册</a>
-             <span> | </span>
-            <a href="#">用户中心</a>
-             <span> | </span>
-            <a href="#">购物车</a>
-             <span> | </span>
-            <a href="#">我的订单</a>
-        </div>
-    </div>
-    <div class="seach_bar clearfix">
-        <a class="logo_png" href="index.html"><img src="/static/images/logo.png"></a>
-        <div class="user_center_logo"><span> | </span>用户中心 </div>
-        <div class="search_field fr" align="center">
-            <input type="text" class="input_box fl" name placeholder="搜索商品">
-            <input type="button" class="input_btn fr" value="搜 索">
-        </div>
-    </div>
-    <div class="main_con">
-        <div class="left_menu">
-            <h3>用户中心</h3>
-            <ul>
-                <li class="active"><a href="{% url 'df_user:user_info' %}">· 个人信息</a></li>
-                <li><a href="{% url 'df_user:user_site' %}">· 收货地址</a></li>
-                <li><a href="{% url 'df_user:user_order' %}">· 全部订单</a></li>
-            </ul>
-        </div>
-        <div class="right_content">
+{% extends 'base_user_center.html' %}
+{% block right_content %}
+    <div class="right_content">
             <div class="basic_info">
                 <h3> 基础信息 </h3>
                 <ul>
@@ -98,6 +66,4 @@
                 </ul>
             </div>
         </div>
-    </div>
-{% endblock body %}
-
+{% endblock right_content %}
