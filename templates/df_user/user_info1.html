@@ -1,69 +1,78 @@
 {% extends 'base_user_center.html' %}
 {% block right_content %}
-    <div class="right_content">
-            <div class="basic_info">
-                <h3> 基础信息 </h3>
-                <ul>
-                    <li>
-                        <span>用户名：</span>denggl
-                    </li>
-                    <li>
-                        <span>联系方式：</span>13333333333
-                    </li>
-                    <li>
-                        <span>联系地址：</span>云南省昆明市五华区高新区中天花园1栋2单元
-                    </li>
-                </ul>
-            </div>
-            <div class="recent_view_goods">
-                <h3> 最近浏览 </h3>
-                <ul>
-                    <li>
-                        <a href="#"><img src="/static/images/goods/goods003.jpg"></a>
-                        <h4><a href="#">安宁草莓</a></h4>
-                        <div class="goods_operation">
-                            <span class="price">￥14.00</span>
-                            <span>/ 500g</span>
-                            <a href="#" class="add_goods" title="加入购物车"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#"><img src="/static/images/goods/goods004.jpg"></a>
-                        <h4><a href="#">安宁草莓</a></h4>
-                        <div class="goods_operation">
-                            <span class="price">￥14.00</span>
-                            <span>/ 500g</span>
-                            <a href="#" class="add_goods" title="加入购物车"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#"><img src="/static/images/goods/goods005.jpg"></a>
-                        <h4><a href="#">安宁草莓</a></h4>
-                        <div class="goods_operation">
-                            <span class="price">￥14.00</span>
-                            <span>/ 500g</span>
-                            <a href="#" class="add_goods" title="加入购物车"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#"><img src="/static/images/goods/goods006.jpg"></a>
-                        <h4><a href="#">安宁草莓</a></h4>
-                        <div class="goods_operation">
-                            <span class="price">￥14.00</span>
-                            <span>/ 500g</span>
-                            <a href="#" class="add_goods" title="加入购物车"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#"><img src="/static/images/goods/goods007.jpg"></a>
-                        <h4><a href="#">安宁草莓</a></h4>
-                        <div class="goods_operation">
-                            <span class="price">￥14.00</span>
-                            <span>/ 500g</span>
-                            <a href="#" class="add_goods" title="加入购物车"></a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+    <div class="main_con">
+        <div class="left_menu">
+            <h3>用户中心</h3>
+            <ul>
+                <li><a class="active" href="{% url 'df_user:user_info' %}">· 个人信息</a></li>
+                <li><a href="{% url 'df_user:user_site' %}">· 收货地址</a></li>
+                <li><a href="{% url 'df_user:user_order' %}">· 全部订单</a></li>
+            </ul>
         </div>
+        <div class="right_content">
+                <div class="basic_info">
+                    <h3> 基础信息 </h3>
+                    <ul>
+                        <li>
+                            <span>用户名：</span>denggl
+                        </li>
+                        <li>
+                            <span>联系方式：</span>13333333333
+                        </li>
+                        <li>
+                            <span>联系地址：</span>云南省昆明市五华区高新区中天花园1栋2单元
+                        </li>
+                    </ul>
+                </div>
+                <div class="recent_view_goods">
+                    <h3> 最近浏览 </h3>
+                    <ul>
+                        <li>
+                            <a href="#"><img src="/static/images/goods/goods003.jpg"></a>
+                            <h4><a href="#">安宁草莓</a></h4>
+                            <div class="goods_operation">
+                                <span class="price">￥14.00</span>
+                                <span>/ 500g</span>
+                                <a href="#" class="add_goods" title="加入购物车"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/images/goods/goods004.jpg"></a>
+                            <h4><a href="#">安宁草莓</a></h4>
+                            <div class="goods_operation">
+                                <span class="price">￥14.00</span>
+                                <span>/ 500g</span>
+                                <a href="#" class="add_goods" title="加入购物车"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/images/goods/goods005.jpg"></a>
+                            <h4><a href="#">安宁草莓</a></h4>
+                            <div class="goods_operation">
+                                <span class="price">￥14.00</span>
+                                <span>/ 500g</span>
+                                <a href="#" class="add_goods" title="加入购物车"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/images/goods/goods006.jpg"></a>
+                            <h4><a href="#">安宁草莓</a></h4>
+                            <div class="goods_operation">
+                                <span class="price">￥14.00</span>
+                                <span>/ 500g</span>
+                                <a href="#" class="add_goods" title="加入购物车"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/images/goods/goods007.jpg"></a>
+                            <h4><a href="#">安宁草莓</a></h4>
+                            <div class="goods_operation">
+                                <span class="price">￥14.00</span>
+                                <span>/ 500g</span>
+                                <a href="#" class="add_goods" title="加入购物车"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 {% endblock right_content %}

@@ -23,6 +23,7 @@
             <input type="button" class="input_btn fr" value="搜 索">
         </div>
     </div>
+    {% block right_content %}
     <div class="main_con">
         <div class="left_menu">
             <h3>用户中心</h3>
@@ -32,7 +33,7 @@
                 <li><a href="{% url 'df_user:user_order' %}">· 全部订单</a></li>
             </ul>
         </div>
-        {% block right_content %}{% endblock right_content %}
+    {% endblock right_content %}
     </div>
 {% endblock body %}
 
