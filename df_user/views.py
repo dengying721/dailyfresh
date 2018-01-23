@@ -100,13 +100,25 @@ def login_index(request):
 
 def user_info(request):
     user_name = request.session.get('user_name')
+    print(user_name)
     user_id = request.session.get('user_id')
-    context = {'title': '用户中心', 'user_name': user_name, 'user_id': user_id}
+    user = UserInfo.objects.filter(uname=user_name)
+    user_phone = user[0].uphone
+    user_address = user[0].uaddress
+
+    context = {'title': '用户中心', 'user_name': user_name, 'user_id': user_id, 'phone': user_phone, 'address': user_address}
     return render(request, 'df_user/user_info1.html', context)
 
 
 def user_site(request):
-    return render(request, "df_user/user_center_site.html")
+    user_id = request.session.get('user_id')
+    user = UserInfo.objects.filter(id=user_id)
+    address = user[0].uaddress
+    shoujian = user[0].ushoujian
+    code = user[0].ucode
+    phone = user[0].uphone
+    context = {'address': address, 'shoujian': shoujian, 'code': code, 'phone': phone}
+    return render(request, "df_user/user_center_site.html", context)
 
 
 def user_order(request):

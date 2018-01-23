@@ -531,7 +531,7 @@
 }
 .main_con .right_content2 .edit input{
 	display: inline-block;
-	width:200px;
+	width:250px;
 	height:30px;
 	color: #666;
 	font-size: 14px;
@@ -540,7 +540,7 @@
 }
 .main_con .right_content2 .edit textarea{
 	height:60px;
-	width: 200px;
+	width: 250px;
 	text-indent: 5px;
 	border: 1px solid #666;
 }

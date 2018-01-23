@@ -4,11 +4,11 @@
         <div class="welcome fl">欢迎来到天天生鲜！</div>
         <div class="tips fr"> 欢迎：{{ user_name }}
             <span> | </span>
-            <a href="login.html">登录</a>
+            <a href="{% url 'df_user:login' %}">登录</a>
              <span> | </span>
-            <a href="#">注册</a>
+            <a href="{% url 'df_user:register' %}">注册</a>
              <span> | </span>
-            <a href="#">用户中心</a>
+            <a href="{% url 'df_user:user_info' %}">用户中心</a>
              <span> | </span>
             <a href="#">购物车</a>
              <span> | </span>
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="seach_bar clearfix">
-        <a class="logo_png" href="index.html"><img src="/static/images/logo.png"></a>
+        <a class="logo_png" href="{% url 'df_user:index' %}"><img src="/static/images/logo.png"></a>
         <div class="user_center_logo"><span> | </span>用户中心 </div>
         <div class="search_field fr" align="center">
             <input type="text" class="input_box fl" name placeholder="搜索商品">
