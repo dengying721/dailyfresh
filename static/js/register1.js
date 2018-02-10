@@ -1,9 +1,9 @@
 $(function(){
-	var error_name = false;
-	var error_password = false;
-	var error_confirm = false;
-	var error_email = false;
-	var error_check = false;
+	var error_name = true;
+	var error_password = true;
+	var error_confirm = true;
+	var error_email = true;
+	var error_check = true;
 	var username = $('#username');
 	var password = $('#password');
 	var confirm = $('#confirm');
@@ -56,8 +56,8 @@ $(function(){
 					error_name = true;
 				}
 				else {
-					username.next().hide();
 					error_name = false;
+					username.next().hide();
 				}
             })
 		}
@@ -71,6 +71,7 @@ $(function(){
 			error_password = true;
 		}
 		else{
+			error_password = false;
 			password.next().hide();
 		}
 	}
@@ -84,6 +85,7 @@ $(function(){
 			confirm.next().show(300);
 		}
 		else {
+		    error_confirm = false;
 			confirm.next().hide();
 		}
 	}
@@ -91,8 +93,9 @@ $(function(){
 	function check_email() {
 		var re = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
 		if(re.test(email.val())){
+		    error_email = false;
 			email.next().hide();
-			error_email = false;
+
 		}
 		else {
 			error_email = true;
